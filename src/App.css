@@ -94,4 +94,8 @@ nav{
 #lowerNav p{
   font-size: 14px;
   margin: 0 5px;
+  min-height: 100%;
+}
+#lowerNav p:hover{
+  cursor: pointer;
 }

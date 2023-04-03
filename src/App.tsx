@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Nav from "./components/Nav";
+import FirstSection from "./layouts/FirstSection";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,38 +41,7 @@ function App() {
     <div className="App">
       <Nav></Nav>
       <div id="backgroundImg"></div>
-
-      <section id="firstSection">
-        <div
-          className="row"
-          style={{ justifyContent: "space-evenly", alignItems: "flex-start" }}
-        >
-          <div className="contentCardContainer column">
-            <p className="contentCardTitle">Pick up where you left off</p>
-            <div className="flexContainer">
-              <div className="flexContainer">{loadData(weightsObject)}</div>
-            </div>
-          </div>
-          <div className="contentCardContainer column">
-            <p className="contentCardTitle">Pick up where you left off</p>
-            <div className="flexContainer">{loadData(weightsObject)}</div>
-          </div>
-          <div className="contentCardContainer column">
-            <p className="contentCardTitle">Today's Deals</p>
-            <img src="src/assets/img/sportsBundle.png" alt="" />
-            <div className="row alignItemsCenter" style={{ margin: "10px 0 " }}>
-              <div className="discountLabel">50% Off</div>
-              <p style={{ color: "#cc0c39", fontWeight: "bold" }}>Deal</p>
-            </div>
-            <p>Sports Equipment from Speedo, Berghaus, Mitre and Canterbury</p>
-          </div>
-          <div className="contentCardContainer column">
-            <p className="contentCardTitle">Get the most out of Amazon</p>
-            <div className="yellowBtn">Create an account</div>
-            <p style={{ textAlign: "center", color: "" }}>Sign in securely</p>
-          </div>
-        </div>
-      </section>
+      <FirstSection></FirstSection>
     </div>
   );
 }

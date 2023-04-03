@@ -62,7 +62,7 @@ function FirstSection() {
         <div className="contentCardContainer column">
           <p className="contentCardTitle">Get the most out of Amazon</p>
           <div className="yellowBtn">Create an account</div>
-          <p style={{ textAlign: "center", color: "#cc0c39" }}>
+          <p style={{ textAlign: "center", color: "rgb(0, 119, 255)" }}>
             Sign in securely
           </p>
         </div>

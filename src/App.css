@@ -370,3 +370,21 @@ footer,.upperFooter,.lowerFooter{
   border-radius: 2px;
   height: 29px;
 }
+/* product divs */
+.productContainer{
+  padding: 15px 12px;
+  width: 1150px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #f6f6f6;
+  margin: 5px auto;
+  font-size: 13px;
+}
+.productTitleProductPage{
+  font-weight: bold;
+  font-size: 20px;
+  padding-bottom: 10px;
+  /* fontSize: "20px"paddingBottom: "10px" */
+}

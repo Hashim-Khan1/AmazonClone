@@ -7,6 +7,70 @@ import ThirdSection from "./layouts/ThirdSection";
 
 function App() {
   const [count, setCount] = useState(0);
+  const footerContent = [
+    {
+      title: "Get to Know Us",
+      others: [
+        "Careers",
+        "About Us",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+      ],
+    },
+    {
+      title: "Make Money with Us",
+      others: [
+        "Careers",
+        "About Us",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+      ],
+    },
+    {
+      title: "Amazon Payment Methods",
+      others: [
+        "Careers",
+        "About Us",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+      ],
+    },
+    {
+      title: "Let Us Help You",
+      others: [
+        "Careers",
+        "About Us",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+        "UK Modern Slavery Statement",
+        "Sustainability",
+        "Amazon Science",
+      ],
+    },
+  ];
+  const loadData = (objData: any) => {
+    return objData.map((obj: any) => {
+      return (
+        <div className="footerBox">
+          <p>{obj.title}</p>
+          {obj.others.map((item: any) => {
+            return <p>{item}</p>;
+          })}
+          <p></p>
+        </div>
+      );
+    });
+  };
 
   return (
     <div className="App">
@@ -16,40 +80,7 @@ function App() {
       <SecondSection></SecondSection>
       <ThirdSection></ThirdSection>
       <footer className="column">
-        <div className="upperFooter">
-          <div className="footerBox">
-            <p>Get to Know Us</p>
-            <p>Careers</p>
-            <p>About Us</p>
-            <p>UK Modern Slavery Statement</p>
-            <p>Sustainability</p>
-            <p>Amazon Science</p>
-          </div>
-          <div className="footerBox">
-            <p>Get to Know Us</p>
-            <p>Careers</p>
-            <p>About Us</p>
-            <p>UK Modern Slavery Statement</p>
-            <p>Sustainability</p>
-            <p>Amazon Science</p>
-          </div>
-          <div className="footerBox">
-            <p>Get to Know Us</p>
-            <p>Careers</p>
-            <p>About Us</p>
-            <p>UK Modern Slavery Statement</p>
-            <p>Sustainability</p>
-            <p>Amazon Science</p>
-          </div>
-          <div className="footerBox">
-            <p>Get to Know Us</p>
-            <p>Careers</p>
-            <p>About Us</p>
-            <p>UK Modern Slavery Statement</p>
-            <p>Sustainability</p>
-            <p>Amazon Science</p>
-          </div>
-        </div>
+        <div className="upperFooter">{loadData(footerContent)}</div>
         <div className="lowerFooter">
           <img src="/src/assets/img/logo.png" id="footerLogo" />
           <div

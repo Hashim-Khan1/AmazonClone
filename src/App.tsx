@@ -6,6 +6,7 @@ import SecondSection from "./layouts/SecondSection";
 import ThirdSection from "./layouts/ThirdSection";
 import Footer from "./components/Footer";
 import SignIn from "./layouts/SignIn";
+import Register from "./layouts/Register";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,7 +21,10 @@ function App() {
       <SecondSection></SecondSection>
       <ThirdSection></ThirdSection>
       <Footer></Footer>*/}
-      <div id="container">{/* <SignIn></SignIn> */}</div>
+      <div id="container">
+        {/* <SignIn></SignIn> */}
+        <Register></Register>
+      </div>
     </div>
   );
 }

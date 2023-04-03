@@ -10,11 +10,19 @@ function Register() {
         <p id="formTitle">Create an account</p>
         <form className="column" action="#">
           <p className="label">Your name</p>
-          <input className="formInpt" type="text" />
+          <input
+            className="formInpt"
+            type="text"
+            placeholder="First and Last name"
+          />
           <p className="label">Email</p>
           <input className="formInpt" type="text" />
           <p className="label">Password</p>
-          <input className="formInpt" type="password" />
+          <input
+            className="formInpt"
+            type="password"
+            placeholder="At least six characters"
+          />
           <p className="label">Re-enter password</p>
           <input className="formInpt" type="password" />
           <input type="submit" className="loginBtn" value={"Continue"} />

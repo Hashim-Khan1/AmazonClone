@@ -143,9 +143,10 @@ section{
 
 .contentCardContainer{
   width: 295px;
-  min-height: 420px;
+  max-height: 420px;
   background-color: white;
   padding: 20px 15px;
+  font-size: 12px;
 
 }
 .contentCardTitle{
@@ -158,6 +159,7 @@ section{
   margin-top: 10px;
   width: 50%;
   text-align: center;
+
 }
 .contentBox img{
   width: 90%;
@@ -166,5 +168,27 @@ section{
 }
 .contentBox p{
   color: #0F1111!important;
-font-size: 13px;
+font-size: 12px;
+}
+.flexContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.discountLabel{
+  background-color: #cc0c39;
+  color: white;
+  padding: 2px 7px;
+  margin-right: 5px;
+}
+.alignItemsCenter{
+  align-items: center;
+}
+.yellowBtn{
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  background: #FFD814;
+    border-color: #FCD200;
+  text-align: center;
+  margin: 10px 0 ;
 }

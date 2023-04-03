@@ -10,6 +10,45 @@ function App() {
       <Nav></Nav>
       <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
+      <section>
+        <div className="longScrollContainer">
+          <p className="contentCardTitle">Pick up where you left off</p>
+          <div className="row">
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+            <div className="imgAndText">
+              <div className="circleImg"></div>
+              <p>title</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

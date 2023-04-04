@@ -388,3 +388,8 @@ footer,.upperFooter,.lowerFooter{
   padding-bottom: 10px;
   /* fontSize: "20px"paddingBottom: "10px" */
 }
+
+.productTitleProductPage:hover{
+  color: rgb(253, 159, 18);
+  cursor: pointer;
+}

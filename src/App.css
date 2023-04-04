@@ -191,6 +191,7 @@ font-size: 12px;
     border-color: #FCD200;
   text-align: center;
   margin: 10px 0 ;
+  cursor: pointer;
 }
 .longScrollContainer{
   width: 100%;
@@ -392,4 +393,53 @@ footer,.upperFooter,.lowerFooter{
 .productTitleProductPage:hover{
   color: rgb(253, 159, 18);
   cursor: pointer;
+}
+/* Induvidual product pages */
+.imgColumn{
+  width:  45px;
+  height: 45px;
+  margin-bottom: 10px;
+  border: 1px solid #e6e3e3;
+}
+.imgRow{
+  display: flex;
+  flex-direction: column;
+}
+.bigImgContainer{
+  width: 400px;
+  height: 400px;
+  margin-top: 10px;
+  background-image: url('src/assets/img/nikeShoe.png');
+  background-color: #f6f6f6;
+  background-position: center;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  margin: 0px 20px;
+}
+.productList{
+  margin-left: 20px;
+  font-size: 14px;
+}
+.productPoint{
+  margin: 15px 0;
+}
+.productPoint b{
+  padding-right: 5px;
+}
+.checkoutBox{
+  margin-bottom: 22px;
+  font-size: 13px;
+  line-height: 19px;
+  color: #111;
+  border-radius: 4px;
+  position: relative;
+  padding: 20px 26px!important;
+  min-width: 250px;
+  border: 1px solid #e1e1e1;
+  margin-left: 30px;
+  min-height: 100%;
+
+}
+.checkoutBox p {
+  padding-bottom: 6px;
 }

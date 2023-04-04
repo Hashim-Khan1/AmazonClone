@@ -13,17 +13,15 @@ function App() {
 
   return (
     <div className="App">
-      {/*        
-      Home Page
-      <Nav></Nav>
+      {/* <Nav></Nav>
       <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
       <SecondSection></SecondSection>
       <ThirdSection></ThirdSection>
-      <Footer></Footer>*/}
+      <Footer></Footer> */}
       {/* Login/Signup page
-       <div id="container">
-        <SignIn></SignIn> 
+      <div id="container">
+        <SignIn></SignIn>
         <Register></Register>
       </div> */}
       {/* Products pages
@@ -176,7 +174,7 @@ function App() {
         </section>
       </div>
       <Footer></Footer> */}
-      <Nav></Nav>
+      {/* <Nav></Nav>
       <div
         id="containerInduvidual"
         style={{
@@ -245,7 +243,7 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer></Footer>
+      <Footer></Footer> */}
     </div>
   );
 }

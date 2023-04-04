@@ -71,7 +71,7 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        <section>
+        <section style={{ paddingTop: "40px" }}>
           <div className="row">
             <div className="row">
               <div className="imgRow">

@@ -205,6 +205,20 @@ section{
   background-color: white;
   overflow-x: hidden;
 }
+.longScrollContainer::-webkit-scrollbar {
+  width: 2px; /* Set the width of the scrollbar */
+  height: 5px;
+}
+
+.longScrollContainer::-webkit-scrollbar-track {
+  background: transparent; /* Set the track color */
+}
+
+.longScrollContainer::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0; /* Set the thumb color */
+  border-radius: 10px; /* Set the border radius of the thumb */
+  border: none; /* Remove the border */
+}
 .longScrollContainer:hover{
   overflow-x: scroll;
   transition: 2s;

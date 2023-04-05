@@ -25,8 +25,7 @@ function App() {
         <SignIn></SignIn>
         <Register></Register>
       </div> */}
-
-      {/* Products pages */}
+      {/* Products pages
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -49,22 +48,10 @@ function App() {
               <p>FREE Delivery by Amazon </p>
             </div>
           </div>
-          <div className="productContainer row">
-            <img src="src/assets/img/weights.png" className="productImg" />
-            <div className="column" style={{ margin: "0 17px" }}>
-              <p className="productTitleProductPage" style={{}}>
-                Sony PlayStation DualShock 4 Controller - Black
-              </p>
-              <p className="productTitleProductPage">£39.99</p>
-              <p> </p>
-              <p>Get it Wednesday, 5 Apr </p>
-              <p>FREE Delivery by Amazon </p>
-            </div>
           </div>
         </section>
       </div>
-      <Footer></Footer>
-      {/* 
+      <Footer></Footer> */}
       Induvidual order page
       <Nav></Nav>
       <div
@@ -76,7 +63,7 @@ function App() {
         }}
       >
         <section style={{ paddingTop: "40px" }}>
-          <div className="row">
+          <div className="row" id="productRow">
             <div className="row">
               <div className="imgRow">
                 <img
@@ -88,7 +75,10 @@ function App() {
               <div className="bigImgContainer"></div>
             </div>
 
-            <div className="column" style={{ paddingLeft: "20px" }}>
+            <div
+              className="productDescriptionBox column"
+              style={{ paddingLeft: "20px" }}
+            >
               <p className="productTitleProductPage">
                 Sony PlayStation DualShock 4 Controller - Black
               </p>
@@ -108,7 +98,7 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div className="checkoutBox column">
+            <div className="checkoutBox column" id="productPageCheckoutBox">
               <p className="productTitleProductPage">£72.55</p>
               <p>FREE delivery Monday, April 17. Details</p>
               <p>In stock</p>
@@ -173,7 +163,7 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer></Footer> */}
+      <Footer></Footer>
       {/* <Nav></Nav>
       <div
         id="containerInduvidual"

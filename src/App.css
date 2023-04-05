@@ -138,13 +138,21 @@ section{
 #firstSection{
   padding: 250px 15px 0 15px;
 }
-
 .contentCardContainer{
-  width: 295px;
+  display: flex;
+  flex-direction: column;
+  max-width: 295px;
   background-color: white;
   padding: 20px 15px;
   font-size: 12px;
 }
+.flexContainer{
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .contentCardTitle{
   font-size: 21px;
   font-weight: bold;
@@ -152,24 +160,23 @@ section{
   margin-bottom: 10px;
 }
 .contentBox{
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
   width: 50%;
+  max-width: 50%;
   text-align: center;
-
+  
 }
 .contentBox img{
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   height: 130px;
 }
 .contentBox p{
   color: #0F1111!important;
-font-size: 12px;
+  font-size: 12px;
 }
-.flexContainer{
-  display: flex;
-  flex-wrap: wrap;
-}
+
 .discountLabel{
   min-width: max-content;
   background-color: #cc0c39;
@@ -481,6 +488,11 @@ footer,.upperFooter,.lowerFooter{
     background-color: #c0c0c0; /* Set the thumb color */
     border-radius: 10px; /* Set the border radius of the thumb */
     border: none; /* Remove the border */
+  }
+}
+@media only screen and (max-width:914px){
+  .contentCardContainer{
+    margin: 10px 0;
   }
 }
 @media only screen and (max-width:703px){

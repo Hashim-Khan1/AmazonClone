@@ -38,13 +38,16 @@ function FirstSection() {
     <section id="firstSection">
       <div
         className="row"
-        style={{ justifyContent: "space-evenly", alignItems: "flex-start" }}
+        style={{
+          justifyContent: "space-evenly",
+          alignItems: "flex-start",
+          width: "100%",
+          flexWrap: "wrap",
+        }}
       >
         <div className="contentCardContainer column">
           <p className="contentCardTitle">Pick up where you left off</p>
-          <div className="flexContainer">
-            <div className="flexContainer">{loadData(weightsObject)}</div>
-          </div>
+          <div className="flexContainer">{loadData(weightsObject)}</div>
         </div>
         <div className="contentCardContainer column">
           <p className="contentCardTitle">Deals on Amazon Devices</p>

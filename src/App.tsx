@@ -48,11 +48,10 @@ function App() {
               <p>FREE Delivery by Amazon </p>
             </div>
           </div>
-          </div>
         </section>
       </div>
       <Footer></Footer> */}
-      Induvidual order page
+      {/* Induvidual order page
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -75,10 +74,7 @@ function App() {
               <div className="bigImgContainer"></div>
             </div>
 
-            <div
-              className="productDescriptionBox column"
-              style={{ paddingLeft: "20px" }}
-            >
+            <div className="productDescriptionBox column">
               <p className="productTitleProductPage">
                 Sony PlayStation DualShock 4 Controller - Black
               </p>
@@ -163,8 +159,8 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer></Footer>
-      {/* <Nav></Nav>
+      <Footer></Footer> */}
+      <Nav></Nav>
       <div
         id="containerInduvidual"
         style={{
@@ -188,11 +184,11 @@ function App() {
           <hr
             style={{ borderTop: "1px solid #e3e6e6", marginBottom: "20px" }}
           />
-          <div className="row">
+          <div className="row" id="basketRow">
             <div className="column">
               <div className="productContainer row">
                 <div></div>
-                <img src="src/assets/img/weights.png" alt="" />
+                <img src="src/assets/img/weights.png" className="productImg" />
                 <div className="column" style={{ margin: "0 17px" }}>
                   <p className="productTitleProductPage">
                     Sony PlayStation DualShock 4 Controller - Black
@@ -233,7 +229,7 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 }

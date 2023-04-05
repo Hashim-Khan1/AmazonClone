@@ -13,20 +13,20 @@ function App() {
 
   return (
     <div className="App">
-      <Nav></Nav>
+      {/* <Nav></Nav>
       <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
       <SecondSection></SecondSection>
       <ThirdSection></ThirdSection>
 
-      <Footer></Footer>
-
+      <Footer></Footer> */}
       {/* Login/Signup page
       <div id="container">
         <SignIn></SignIn>
         <Register></Register>
       </div> */}
-      {/* Products pages
+
+      {/* Products pages */}
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -38,8 +38,7 @@ function App() {
       >
         <section style={{ backgroundColor: "white", minHeight: "100vh" }}>
           <div className="productContainer row">
-            <div></div>
-            <img src="src/assets/img/weights.png" alt="" />
+            <img src="src/assets/img/weights.png" className="productImg" />
             <div className="column" style={{ margin: "0 17px" }}>
               <p className="productTitleProductPage">
                 Sony PlayStation DualShock 4 Controller - Black
@@ -51,8 +50,7 @@ function App() {
             </div>
           </div>
           <div className="productContainer row">
-            <div></div>
-            <img src="src/assets/img/weights.png" alt="" />
+            <img src="src/assets/img/weights.png" className="productImg" />
             <div className="column" style={{ margin: "0 17px" }}>
               <p className="productTitleProductPage" style={{}}>
                 Sony PlayStation DualShock 4 Controller - Black
@@ -65,7 +63,7 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer></Footer> */}
+      <Footer></Footer>
       {/* 
       Induvidual order page
       <Nav></Nav>

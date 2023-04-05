@@ -13,12 +13,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Nav></Nav>
-      <div id="backgroundImg"></div>
+      <Nav></Nav>
+      {/* <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
       <SecondSection></SecondSection>
       <ThirdSection></ThirdSection>
       <Footer></Footer> */}
+
       {/* Login/Signup page
       <div id="container">
         <SignIn></SignIn>

@@ -19,7 +19,6 @@ nav{
   display: flex;
   flex-direction: column;
   color: white;
-
 }
 .row{
   display: flex;
@@ -31,7 +30,6 @@ nav{
 }
 #logo{
   width: 103px;
-  /* margin-right: ; */
 }
 #pin{
   width: 17px;
@@ -443,4 +441,30 @@ footer,.upperFooter,.lowerFooter{
 }
 .checkoutBox p {
   padding-bottom: 6px;
+}
+@media only screen and (max-width:1250px){
+  section{
+    width: 100%;
+  }
+  #upperNav{
+    width: 100%;
+  }
+}
+@media only screen and (max-width:1108px){
+  #upperNav :nth-child(4),#upperNav :nth-child(5){
+    display: none;
+    border: 1px solid red;
+  }
+}
+@media only screen and (max-width:603px){
+  #addressBox{
+    display: none;
+
+    border: 1px solid red;
+  }
+  #logo{
+    width: 75px;
+    height: 35px;
+    margin-right: 10px;
+  }
 }

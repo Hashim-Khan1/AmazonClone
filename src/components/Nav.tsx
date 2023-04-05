@@ -21,7 +21,11 @@ function Nav() {
     <nav>
       <div className="row" id="upperNav">
         <img src="src/assets/img/logo.png" id="logo" />
-        <div className="row upperNavContentBox" style={{ margin: "0 25px" }}>
+        <div
+          className="row upperNavContentBox"
+          id="addressBox"
+          style={{ margin: "0 25px" }}
+        >
           <img src="src/assets/img/pin.png" id="pin" />
           <div className="column">
             <p className="greyText">Hello</p>

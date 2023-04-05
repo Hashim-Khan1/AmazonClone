@@ -17,8 +17,9 @@ function App() {
       {/* <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
       <SecondSection></SecondSection>
-      <ThirdSection></ThirdSection>
-      <Footer></Footer> */}
+      <ThirdSection></ThirdSection> */}
+
+      <Footer></Footer>
 
       {/* Login/Signup page
       <div id="container">

@@ -464,7 +464,6 @@ footer,.upperFooter,.lowerFooter{
   #lowerNav::-webkit-scrollbar {
     width: 2px; /* Set the width of the scrollbar */
     height: 5px;
-
   }
   
   #lowerNav::-webkit-scrollbar-track {
@@ -475,6 +474,17 @@ footer,.upperFooter,.lowerFooter{
     background-color: #c0c0c0; /* Set the thumb color */
     border-radius: 10px; /* Set the border radius of the thumb */
     border: none; /* Remove the border */
+  }
+}
+@media only screen and (max-width:703px){
+  .upperFooter{
+    flex-direction: column;
+  }
+  .footerBox {
+    min-height: max-content;
+}
+  .upperFooter  p:not(:first-child){
+    display: none;
   }
 }
 @media only screen and (max-width:603px){

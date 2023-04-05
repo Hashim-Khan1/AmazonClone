@@ -14,10 +14,10 @@ function App() {
   return (
     <div className="App">
       <Nav></Nav>
-      {/* <div id="backgroundImg"></div>
+      <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
       <SecondSection></SecondSection>
-      <ThirdSection></ThirdSection> */}
+      <ThirdSection></ThirdSection>
 
       <Footer></Footer>
 

@@ -141,7 +141,6 @@ section{
 
 .contentCardContainer{
   width: 295px;
-  max-height: 420px;
   background-color: white;
   padding: 20px 15px;
   font-size: 12px;
@@ -442,6 +441,14 @@ footer,.upperFooter,.lowerFooter{
 .checkoutBox p {
   padding-bottom: 6px;
 }
+@media only screen and (max-width:1278px){
+  #backgroundImg{
+    position: absolute;
+    width: 100%;
+   background-size: cover;
+  }
+}
+
 @media only screen and (max-width:1250px){
   section{
     width: 100%;

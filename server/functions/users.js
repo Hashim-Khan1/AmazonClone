@@ -5,13 +5,10 @@ const conn = mysql.createConnection(process.env.DATABASE_URL);
 const UserExists = async (username) => {
   const result = conn
     .promise()
-    .query(`SELECT username from users WHERE username = ?`, [username])
+    .query(`SELECT * from users WHERE username = ?`, [username])
     .then(([rows, fields]) => {
-      console.log(rows.length);
       if (rows.length > 0) {
-        const { username } = rows[0];
-        // console.log(username);
-        return username;
+        return rows[0];
       } else {
         return false;
       }
@@ -30,4 +27,12 @@ const createUser = async (username, password) => {
     passwordHashed,
   ]);
 };
-module.exports = { UserExists, createUser };
+const checkUserPass = async (usernameUser, passwordUser) => {
+  let { password } = await UserExists(usernameUser);
+  console.log(username);
+  console.log(password);
+  const res = bcrypt.compareSync(passwordUser, password);
+  return res;
+};
+
+module.exports = { UserExists, createUser, checkUserPass };

@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 const conn = mysql.createConnection(process.env.DATABASE_URL);
 const UserExists = async (username) => {
@@ -17,4 +18,13 @@ const UserExists = async (username) => {
     });
   return result;
 };
-module.exports = { UserExists };
+const createUser = async (username, password) => {
+  const passwordHash = async (password) => {
+    // console.log(password, "plain password");
+    const hash = bcrypt.hashSync(password, 12);
+    return hash;
+  };
+
+  console.log(await passwordHash(password));
+};
+module.exports = { UserExists, createUser };

@@ -473,6 +473,19 @@ footer,.upperFooter,.lowerFooter{
 .checkoutBox p {
   padding-bottom: 6px;
 }
+#response{
+  width: 425px;
+  margin: 40px 0;
+  padding: 10px 15px;
+  border: 1px solid red;
+  font-size: 13px;
+  border-radius: 4px;
+}
+#repsoneTitle{
+  font-size: 25px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
 @media only screen and (max-width:1278px){
   #backgroundImg{
     position: absolute;
@@ -576,5 +589,8 @@ footer,.upperFooter,.lowerFooter{
   section{
     padding: 20px;
 
+  }
+  #response{
+    width: 90%;
   }
 }

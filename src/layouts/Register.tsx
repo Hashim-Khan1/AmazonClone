@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Response from "../components/Response";
 
 function Register() {
   const [count, setCount] = useState(0);
@@ -6,6 +7,8 @@ function Register() {
   return (
     <>
       <div id="loginLogo"></div>
+      <Response />
+
       <div className="formLoginContainer">
         <p id="formTitle">Create an account</p>
         <form className="column" action="#">

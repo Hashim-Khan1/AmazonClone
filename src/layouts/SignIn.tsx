@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Response from "../components/Response";
 
 function SignIn() {
   const [count, setCount] = useState(0);
@@ -6,6 +7,8 @@ function SignIn() {
   return (
     <>
       <div id="loginLogo"></div>
+      <Response />
+
       <div className="formLoginContainer">
         <p id="formTitle">Sign in</p>
         <form className="column" action="#">

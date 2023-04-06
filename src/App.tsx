@@ -5,7 +5,7 @@ import "./App.css";
 
 import SignInPage from "./pages/SignInPage";
 import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/productPage";
+import ProductPage from "./pages/ProductPage";
 import ProductInduvidual from "./pages/ProductInduvidual";
 import BasketPage from "./pages/BasketPage";
 

@@ -3,6 +3,7 @@ import "./App.css";
 
 import SignInPage from "./pages/SignInPage";
 import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/productPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,33 +13,7 @@ function App() {
       {/* <SignInPage/> */}
 
       {/* <HomePage /> */}
-
-      {/* Products pages
-      <Nav></Nav>
-      <div
-        id="containerInduvidual"
-        style={{
-          backgroundColor: "white",
-          width: "100%",
-          minHeight: "100vh",
-        }}
-      >
-        <section style={{ backgroundColor: "white", minHeight: "100vh" }}>
-          <div className="productContainer row">
-            <img src="src/assets/img/weights.png" className="productImg" />
-            <div className="column" style={{ margin: "0 17px" }}>
-              <p className="productTitleProductPage">
-                Sony PlayStation DualShock 4 Controller - Black
-              </p>
-              <p className="productTitleProductPage">£39.99</p>
-              <p> </p>
-              <p>Get it Wednesday, 5 Apr </p>
-              <p>FREE Delivery by Amazon </p>
-            </div>
-          </div>
-        </section>
-      </div>
-      <Footer></Footer> */}
+      <ProductPage />
       {/* Induvidual order page
       <Nav></Nav>
       <div

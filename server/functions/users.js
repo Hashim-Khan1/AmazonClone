@@ -29,8 +29,6 @@ const createUser = async (username, password) => {
 };
 const checkUserPass = async (usernameUser, passwordUser) => {
   let { password } = await UserExists(usernameUser);
-  console.log(username);
-  console.log(password);
   const res = bcrypt.compareSync(passwordUser, password);
   return res;
 };

@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const { UserExists, createUser } = require("../functions/users");
+const { UserExists, createUser, checkUserPass } = require("../functions/users");
 
 const router = express.Router();
 router.use(bodyParser.json());
@@ -20,6 +20,26 @@ router.post("/create-user", async (req, res) => {
       status: 201,
       message: "User successfully created",
       color: "green",
+    });
+  }
+});
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+  if (
+    (await UserExists(username)) !== false &&
+    (await checkUserPass(username, password)) == true
+  ) {
+    console.log("User exsists");
+    res.send({
+      status: 201,
+      message: "Login successful",
+      color: "green",
+    });
+  } else {
+    res.send({
+      status: 201,
+      message: "Incorrect login credentials",
+      color: "red",
     });
   }
 });

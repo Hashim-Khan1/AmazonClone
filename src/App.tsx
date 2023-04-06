@@ -5,14 +5,14 @@ import FirstSection from "./layouts/FirstSection";
 import SecondSection from "./layouts/SecondSection";
 import ThirdSection from "./layouts/ThirdSection";
 import Footer from "./components/Footer";
-import SignIn from "./layouts/SignIn";
-import Register from "./layouts/Register";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
+      {/* <SignInPage></SignInPage> */}
       {/* <Nav></Nav>
       <div id="backgroundImg"></div>
       <FirstSection></FirstSection>
@@ -20,11 +20,7 @@ function App() {
       <ThirdSection></ThirdSection>
 
       <Footer></Footer> */}
-      {/* Login/Signup page
-      <div id="container">
-        <SignIn></SignIn>
-        <Register></Register>
-      </div> */}
+
       {/* Products pages
       <Nav></Nav>
       <div
@@ -160,6 +156,8 @@ function App() {
         </section>
       </div>
       <Footer></Footer> */}
+      {/* 
+        Basket page
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -229,7 +227,7 @@ function App() {
           </div>
         </section>
       </div>
-      <Footer></Footer>
+      <Footer></Footer> */}
     </div>
   );
 }

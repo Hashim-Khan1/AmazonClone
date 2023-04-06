@@ -1,25 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import Nav from "./components/Nav";
-import FirstSection from "./layouts/FirstSection";
-import SecondSection from "./layouts/SecondSection";
-import ThirdSection from "./layouts/ThirdSection";
-import Footer from "./components/Footer";
+
 import SignInPage from "./pages/SignInPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      {/* <SignInPage></SignInPage> */}
-      {/* <Nav></Nav>
-      <div id="backgroundImg"></div>
-      <FirstSection></FirstSection>
-      <SecondSection></SecondSection>
-      <ThirdSection></ThirdSection>
+      {/* <SignInPage/> */}
 
-      <Footer></Footer> */}
+      {/* <HomePage /> */}
 
       {/* Products pages
       <Nav></Nav>

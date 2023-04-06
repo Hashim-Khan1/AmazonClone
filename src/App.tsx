@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import "./App.css";
 
 import SignInPage from "./pages/SignInPage";
@@ -12,12 +14,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* <SignInPage/> */}
-
-      {/* <HomePage /> */}
-      {/* <ProductPage /> */}
-      {/* <ProductInduvidual /> */}
-      {/* <BasketPage /> */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<SignInPage />} />
+        <Route path="/products" element={<ProductPage />} />
+        <Route path="/product" element={<ProductInduvidual />} />
+        <Route path="/basket" element={<BasketPage />} />
+      </Routes>
     </div>
   );
 }

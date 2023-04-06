@@ -24,7 +24,10 @@ const createUser = async (username, password) => {
     const hash = bcrypt.hashSync(password, 12);
     return hash;
   };
-
-  console.log(await passwordHash(password));
+  let passwordHashed = await passwordHash(password);
+  conn.query("INSERT INTO users (username,password) VALUES(?,?)", [
+    username,
+    passwordHashed,
+  ]);
 };
 module.exports = { UserExists, createUser };

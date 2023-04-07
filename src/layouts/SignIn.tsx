@@ -1,19 +1,70 @@
 import { useState } from "react";
 import Response from "../components/Response";
+import axios from "axios";
 
 function SignIn() {
-  const [count, setCount] = useState(0);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [response, setResponse] = useState(null);
+
+  const submitForm = async (e: any) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const result = await axios.post(
+        "http://localhost:3000/user/login",
+        formData
+      );
+
+      console.log(result.data);
+      setResponse(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleChange = (e: any) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFormData((values) => ({
+      ...values,
+      [name]: value,
+    }));
+  };
 
   return (
     <>
       <div id="loginLogo"></div>
-      <Response />
+      {response !== null ? (
+        <Response
+          message={`${response.message}`}
+          title={`${response.title}`}
+          colour={`${response.color}`}
+        />
+      ) : (
+        ""
+      )}
 
       <div className="formLoginContainer">
         <p id="formTitle">Sign in</p>
-        <form className="column" action="#">
+        <form className="column" action="#" onSubmit={submitForm}>
           <p className="label">Email or mobile phone number</p>
-          <input className="formInpt" type="text" />
+          <input
+            className="formInpt"
+            type="text"
+            name="username"
+            onChange={handleChange}
+            value={formData.username || ""}
+          />
+          <p className="label">Password</p>
+          <input
+            className="formInpt"
+            type="password"
+            name="password"
+            onChange={handleChange}
+            value={formData.password || ""}
+          />
           <input type="submit" className="loginBtn" value={"Continue"} />
         </form>
       </div>

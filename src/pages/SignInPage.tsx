@@ -4,9 +4,9 @@ import Register from "../layouts/Register";
 function SignInPage() {
   return (
     <div id="container">
-      {/* <SignIn></SignIn> */}
+      <SignIn></SignIn>
 
-      <Register></Register>
+      {/* <Register></Register> */}
     </div>
   );
 }

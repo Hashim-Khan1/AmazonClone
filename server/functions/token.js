@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const jwt = require("jsonwebtoken");
 
-const createJWTToken = function (username) {
+const createJWTToken = async function (username) {
   const token = jwt.sign({ id: username }, process.env.ACCESS_TOKEN, {
     expiresIn: "30d",
   });
@@ -15,4 +15,4 @@ const verifyJWTToken = function (value) {
   });
   return verify;
 };
-module.exports = {};
+module.exports = { createJWTToken, verifyJWTToken };

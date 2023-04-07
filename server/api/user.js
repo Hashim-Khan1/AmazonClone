@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { UserExists, createUser, checkUserPass } = require("../functions/users");
+const { createJWTToken, verifyJWTToken } = require("../functions/token");
 
 const router = express.Router();
 router.use(bodyParser.json());
@@ -32,11 +33,13 @@ router.post("/login", async (req, res) => {
     (await checkUserPass(username, password)) == true
   ) {
     console.log("User exsists");
+    let token = await createJWTToken(username);
     res.send({
       status: 201,
       title: "Successfull",
       message: "Login successful",
       color: "green",
+      accessToken: token,
     });
   } else {
     res.send({

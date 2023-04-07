@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Response from "../components/Response";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 function SignIn() {
   const [formData, setFormData] = useState({
@@ -17,9 +18,8 @@ function SignIn() {
         "http://localhost:3000/user/login",
         formData
       );
-
-      console.log(result.data);
       setResponse(result.data);
+      Cookies.set("AccessToekn", result.data.accessToken);
     } catch (error) {
       console.log(error);
     }

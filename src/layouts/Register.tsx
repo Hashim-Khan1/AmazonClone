@@ -1,30 +1,60 @@
 import { useState } from "react";
 import Response from "../components/Response";
+import axios from "axios";
 
 function Register() {
-  const [count, setCount] = useState(0);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [response, setResponse] = useState({});
 
+  const submitForm = async (e: any) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const result = await axios.post(
+        "http://localhost:3000/user/create-user",
+        formData
+      );
+      console.log(response);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleChange = (e: any) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFormData((values) => ({
+      ...values,
+      [name]: value,
+    }));
+  };
   return (
     <>
       <div id="loginLogo"></div>
-      <Response />
+      {/* <Response /> */}
 
       <div className="formLoginContainer">
         <p id="formTitle">Create an account</p>
-        <form className="column" action="#">
-          <p className="label">Your name</p>
+        <form className="column" action="#" onSubmit={submitForm}>
+          <p className="label">Email</p>
           <input
             className="formInpt"
             type="text"
-            placeholder="First and Last name"
+            name="username"
+            onChange={handleChange}
+            value={formData.username || ""}
           />
-          <p className="label">Email</p>
-          <input className="formInpt" type="text" />
           <p className="label">Password</p>
           <input
             className="formInpt"
             type="password"
             placeholder="At least six characters"
+            name="password"
+            onChange={handleChange}
+            value={formData.password || ""}
           />
           <p className="label">Re-enter password</p>
           <input className="formInpt" type="password" />

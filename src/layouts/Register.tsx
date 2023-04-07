@@ -7,7 +7,7 @@ function Register() {
     username: "",
     password: "",
   });
-  const [response, setResponse] = useState({});
+  const [response, setResponse] = useState(null);
 
   const submitForm = async (e: any) => {
     e.preventDefault();
@@ -17,8 +17,9 @@ function Register() {
         "http://localhost:3000/user/create-user",
         formData
       );
-      console.log(response);
-      console.log(result);
+
+      console.log(result.data);
+      setResponse(result.data);
     } catch (error) {
       console.log(error);
     }
@@ -34,7 +35,16 @@ function Register() {
   return (
     <>
       <div id="loginLogo"></div>
-      {/* <Response /> */}
+
+      {response !== null ? (
+        <Response
+          message={`${response.message}`}
+          title={`${response.title}`}
+          colour={`${response.color}`}
+        />
+      ) : (
+        ""
+      )}
 
       <div className="formLoginContainer">
         <p id="formTitle">Create an account</p>

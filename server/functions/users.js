@@ -17,7 +17,6 @@ const UserExists = async (username) => {
 };
 const createUser = async (username, password) => {
   const passwordHash = async (password) => {
-    // console.log(password, "plain password");
     const hash = bcrypt.hashSync(password, 12);
     return hash;
   };

@@ -6,7 +6,7 @@ function SignInPage() {
     <div id="container">
       {/* <SignIn></SignIn> */}
 
-      {/* <Register></Register> */}
+      <Register></Register>
     </div>
   );
 }

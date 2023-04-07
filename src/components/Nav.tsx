@@ -20,13 +20,13 @@ function Nav() {
   return (
     <nav>
       <div className="row" id="upperNav">
-        <img src="src/assets/img/logo.png" id="logo" />
+        <img src="../src/assets/img/logo.png" id="logo" />
         <div
           className="row upperNavContentBox"
           id="addressBox"
           style={{ margin: "0 25px" }}
         >
-          <img src="src/assets/img/pin.png" id="pin" />
+          <img src="../src/assets/img/pin.png" id="pin" />
           <div className="column">
             <p className="greyText">Hello</p>
             <p className="whiteBold" style={{ letterSpacing: "1px" }}>
@@ -39,7 +39,7 @@ function Nav() {
           <div className="searchBtn"></div>
         </div>
         <div className="row upperNavContentBox" style={{ margin: "0 25px" }}>
-          <img src="src/assets/img/gbFlag.png" id="flag" />
+          <img src="../src/assets/img/gbFlag.png" id="flag" />
           <div className="column">
             <p className="greyText">Hello, sign up</p>
             <p className="whiteBold" style={{ letterSpacing: "1px" }}>
@@ -69,7 +69,7 @@ function Nav() {
             >
               0
             </p>
-            <img src="src/assets/img/basket.png" id="basket" />
+            <img src="../src/assets/img/basket.png" id="basket" />
           </div>
           <p
             className="whiteBold"

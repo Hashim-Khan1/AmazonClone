@@ -10,6 +10,7 @@ router.post("/create-user", async (req, res) => {
     console.log("User exsists");
     res.send({
       status: 201,
+      title: "ERROR",
       message: "Email already in use",
       color: "red",
     });
@@ -18,6 +19,7 @@ router.post("/create-user", async (req, res) => {
     await createUser(username, password);
     res.send({
       status: 201,
+      title: "Successfull",
       message: "User successfully created",
       color: "green",
     });
@@ -32,12 +34,14 @@ router.post("/login", async (req, res) => {
     console.log("User exsists");
     res.send({
       status: 201,
+      title: "Successfull",
       message: "Login successful",
       color: "green",
     });
   } else {
     res.send({
       status: 201,
+      title: "Unauthorized",
       message: "Incorrect login credentials",
       color: "red",
     });

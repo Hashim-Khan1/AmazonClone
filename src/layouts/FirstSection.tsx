@@ -27,10 +27,15 @@ function FirstSection() {
   const loadData = (objData: any) => {
     return objData.map((obj: any) => {
       return (
-        <div className="contentBox column" key={obj.productID}>
+        <a
+          className="contentBox column"
+          key={obj.productID}
+          href={`product/${obj.productID}`}
+          style={{ textDecoration: "none" }}
+        >
           <img src={obj.img} className="contentImg" />
           <p>{obj.title}</p>
-        </div>
+        </a>
       );
     });
   };
@@ -53,7 +58,11 @@ function FirstSection() {
           <p className="contentCardTitle">Deals on Amazon Devices</p>
           <div className="flexContainer">{loadData(weightsObject)}</div>
         </div>
-        <div className="contentCardContainer column">
+        <a
+          className="contentCardContainer column"
+          href="products/sports"
+          style={{ color: "#000000", textDecoration: "none" }}
+        >
           <p className="contentCardTitle">Today's Deals</p>
           <img src="src/assets/img/sportsBundle.png" alt="" />
           <div className="row alignItemsCenter" style={{ margin: "10px 0 " }}>
@@ -61,13 +70,18 @@ function FirstSection() {
             <p style={{ color: "#cc0c39", fontWeight: "bold" }}>Deal</p>
           </div>
           <p>Sports Equipment from Speedo, Berghaus, Mitre and Canterbury</p>
-        </div>
+        </a>
         <div className="contentCardContainer column">
           <p className="contentCardTitle">Get the most out of Amazon</p>
-          <div className="yellowBtn">Create an account</div>
-          <p style={{ textAlign: "center", color: "rgb(0, 119, 255)" }}>
+          <a className="yellowBtn" href="login">
+            Create an account
+          </a>
+          <a
+            href="login"
+            style={{ textAlign: "center", color: "rgb(0, 119, 255)" }}
+          >
             Sign in securely
-          </p>
+          </a>
         </div>
       </div>
     </section>

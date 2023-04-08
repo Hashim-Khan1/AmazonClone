@@ -486,6 +486,9 @@ footer,.upperFooter,.lowerFooter{
   padding-bottom: 10px;
   font-weight: bold;
 }
+a{
+  text-decoration: none;
+}
 @media only screen and (max-width:1278px){
   #backgroundImg{
     position: absolute;

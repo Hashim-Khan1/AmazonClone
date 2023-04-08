@@ -55,7 +55,12 @@ function ThirdSection() {
   const loadData = (objData: any) => {
     return objData.map((obj: any) => {
       return (
-        <div className="imgAndText">
+        <a
+          className="imgAndText"
+          key={obj.productID}
+          href={`product/${obj.productID}`}
+          style={{ textDecoration: "none", color: "black" }}
+        >
           <div
             className="circleImg"
             style={{ backgroundColor: "#e3e6e6" }}
@@ -82,7 +87,7 @@ function ThirdSection() {
             {obj.price}
           </p>
           <p className="productTitleSmall">{obj.title}</p>
-        </div>
+        </a>
       );
     });
   };

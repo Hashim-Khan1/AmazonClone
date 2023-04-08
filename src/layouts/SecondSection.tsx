@@ -7,48 +7,56 @@ function SecondSection() {
       productID: 0,
       title: "Sports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
     {
       productID: 1,
       title: "Sports shoe",
       img: "src/assets/img/weights.png",
+      category: "Womenshoes",
     },
     {
       productID: 2,
       title: "DLSports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
     {
       productID: 3,
       title: "Sports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
     {
       productID: 4,
       title: "Sports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
     {
       productID: 5,
       title: "Sports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
     {
       productID: 6,
       title: "DLSports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
     {
       productID: 7,
       title: "Sports shoe",
       img: "src/assets/img/weights.png",
+      category: "mensShoes",
     },
   ];
   const loadData = (objData: any) => {
     return objData.map((obj: any) => {
       return (
         <a
-          href={`products/${obj.productID}`}
+          href={`products/${obj.category}`}
           className="imgAndText"
           key={obj.productID}
           style={{ textDecoration: "none", color: "#000000" }}

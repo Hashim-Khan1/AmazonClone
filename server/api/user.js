@@ -50,4 +50,12 @@ router.post("/login", async (req, res) => {
     });
   }
 });
+router.post("/verify-token", async (req, res) => {
+  const { token } = req.body;
+  let result = verifyJWTToken(token);
+  res.send({
+    status: 201,
+    tokenAuth: result,
+  });
+});
 module.exports = router;

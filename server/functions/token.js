@@ -10,7 +10,7 @@ const createJWTToken = async function (username) {
 };
 const verifyJWTToken = function (value) {
   const verify = jwt.verify(value, process.env.ACCESS_TOKEN, (err, data) => {
-    if (err) return err;
+    if (err) return false;
     return data;
   });
   return verify;

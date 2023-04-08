@@ -47,10 +47,15 @@ function SecondSection() {
   const loadData = (objData: any) => {
     return objData.map((obj: any) => {
       return (
-        <div className="imgAndText" key={obj.productID}>
+        <a
+          href={`products/${obj.productID}`}
+          className="imgAndText"
+          key={obj.productID}
+          style={{ textDecoration: "none", color: "#000000" }}
+        >
           <div className="circleImg borderRnd"></div>
           <p className="productTitle">{obj.title}</p>
-        </div>
+        </a>
       );
     });
   };

@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import axios from "axios";
+
 function Nav() {
-  const [count, setCount] = useState(0);
+  const [userInfo, setUserInfo] = useState("");
   const lowerNavArray = [
     "Best Sellers",
     "Gift Ideas",
@@ -17,6 +20,34 @@ function Nav() {
     "Kindle Books",
     "PC",
   ];
+  const checkCookie = () => {
+    const cookieValue = Cookies.get("AccessToekn");
+
+    if (cookieValue == undefined) return false;
+    return cookieValue;
+  };
+  const verifyCookie = async (tokenValue: any) => {
+    try {
+      const result = await axios.post(
+        "http://localhost:3000/user/verify-token",
+        {
+          token: tokenValue,
+        }
+      );
+      console.log(result);
+      if (result != false) {
+        let { id } = result.data.tokenAuth;
+        setUserInfo(id);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    if (checkCookie() != false) {
+      verifyCookie(checkCookie());
+    }
+  }, [userInfo]);
   return (
     <nav>
       <div className="row" id="upperNav">
@@ -41,7 +72,9 @@ function Nav() {
         <div className="row upperNavContentBox" style={{ margin: "0 25px" }}>
           <img src="../src/assets/img/gbFlag.png" id="flag" />
           <div className="column">
-            <p className="greyText">Hello, sign up</p>
+            <p className="greyText">
+              Hello, {userInfo != "" ? userInfo : "sign up"}
+            </p>
             <p className="whiteBold" style={{ letterSpacing: "1px" }}>
               Accounts & Lists
             </p>

@@ -6,8 +6,7 @@ const createPost = async (
   productTitle,
   category,
   price,
-  productDescription,
-  imgContents
+  productDescription
 ) => {
   conn.query(
     "INSERT INTO products (productID,productTitle,category,price,productDescription) VALUES(?,?,?,?,?)",

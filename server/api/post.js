@@ -22,7 +22,10 @@ router.post("/create-post", async (req, res) => {
 router.post("/load-products", async (req, res) => {
   const { category } = req.body;
   console.log(category);
-  loadAllProducts(category);
+  let productsData = await loadAllProducts(category);
+  res.status(201).send({
+    products: productsData,
+  });
 });
 
 module.exports = router;

@@ -25,6 +25,7 @@ const loadAllProducts = async (whatToLoad) => {
         return false;
       }
     });
+  return res;
 };
 
 module.exports = { createPost, loadAllProducts };

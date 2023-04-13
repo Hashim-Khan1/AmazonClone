@@ -1,6 +1,7 @@
 const mysql = require("mysql2");
 require("dotenv").config();
 const conn = mysql.createConnection(process.env.DATABASE_URL);
+
 const createPost = async (
   productID,
   productTitle,
@@ -13,5 +14,17 @@ const createPost = async (
     [productID, productTitle, category, price, productDescription]
   );
 };
+const loadAllProducts = async (whatToLoad) => {
+  const res = await conn
+    .promise()
+    .query("SELECT * FROM products WHERE category = ?", [whatToLoad])
+    .then(([rows, fields]) => {
+      if (rows.length > 0) {
+        return rows;
+      } else {
+        return false;
+      }
+    });
+};
 
-module.exports = { createPost };
+module.exports = { createPost, loadAllProducts };

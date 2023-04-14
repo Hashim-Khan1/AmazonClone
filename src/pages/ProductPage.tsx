@@ -5,7 +5,9 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 function ProductPage() {
+  const [pageOffset, setpageOffset] = useState(1);
   const [productData, setProductData] = useState([]);
+
   const loadProductData = async () => {
     let urlPath = window.location.pathname.split("/");
     const lastIndex = urlPath.slice(-1)[0];
@@ -13,9 +15,10 @@ function ProductPage() {
     try {
       const res = await axios.post("http://localhost:3000/post/load-products", {
         category: lastIndex,
+        limit: pageOffset,
       });
       setProductData(res.data.products);
-      console.log(res.data.products);
+      console.log(res.data.products.length);
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +45,12 @@ function ProductPage() {
     const d = new Date();
     return productData.map((element) => {
       return (
-        <div className="productContainer row">
+        <a
+          className="productContainer row"
+          href={`/product/${element.productID}`}
+          style={{ color: "black" }}
+          key={`${element.productID}`}
+        >
           <img src="src/assets/img/weights.png" className="productImg" />
           <div className="column" style={{ margin: "0 17px" }}>
             <p className="productTitleProductPage">{element.productTitle}</p>
@@ -52,9 +60,12 @@ function ProductPage() {
             </p>
             <p>FREE Delivery by Amazon </p>
           </div>
-        </div>
+        </a>
       );
     });
+  };
+  const clickFunction = (e: any) => {
+    console.log(e.currentTarget.innerText);
   };
   useEffect(() => {
     loadProductData();
@@ -72,6 +83,11 @@ function ProductPage() {
       >
         <section style={{ backgroundColor: "white", minHeight: "100vh" }}>
           {productData != false ? renderProducts() : "no products "}
+          <div className="pageNationRow row">
+            <div onClick={clickFunction}>1</div>
+            <div onClick={clickFunction}>2</div>
+            <div onClick={clickFunction}>3</div>
+          </div>
         </section>
       </div>
       <Footer></Footer>

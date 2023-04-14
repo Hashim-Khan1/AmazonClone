@@ -9,12 +9,21 @@ function ProductPage() {
   const [pageLength, setpageLength] = useState();
   const [productData, setProductData] = useState([]);
 
-  const loadProductData = async () => {
+  const correctSQL = () => {
     let urlPath = window.location.pathname.split("/");
     const lastIndex = urlPath.slice(-1)[0];
+    if (lastIndex.includes("%20")) {
+      return lastIndex.replace("%20", " ");
+    } else {
+      return lastIndex;
+    }
+  };
+  const loadProductData = async () => {
+    let result = correctSQL();
+    console.log(correctSQL());
     try {
       const res = await axios.post("http://localhost:3000/post/load-products", {
-        category: lastIndex,
+        category: result,
         limit: pageOffset,
       });
       setProductData(res.data.products);
@@ -24,14 +33,13 @@ function ProductPage() {
   };
 
   const loadRows = async () => {
-    let urlPath = window.location.pathname.split("/");
-    const lastIndex = urlPath.slice(-1)[0];
-    console.log(lastIndex);
+    let result = correctSQL();
+
     try {
       const res = await axios.post(
         "http://localhost:3000/post/load-products-length",
         {
-          category: lastIndex,
+          category: result,
         }
       );
       setpageLength(res.data.productsLength);
@@ -116,8 +124,6 @@ function ProductPage() {
         <div className="pageNationRow row">
           {productData != false ? renderPageNation(pageLength) : "no products "}
         </div>
-
-        {}
       </div>
       <Footer></Footer>
     </>

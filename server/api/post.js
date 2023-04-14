@@ -1,7 +1,11 @@
 const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const bodyParser = require("body-parser");
-const { createPost, loadAllProducts } = require("../functions/post");
+const {
+  createPost,
+  loadAllProducts,
+  loadAllProductsLength,
+} = require("../functions/post");
 
 const router = express.Router();
 router.use(bodyParser.json());
@@ -21,10 +25,16 @@ router.post("/create-post", async (req, res) => {
 });
 router.post("/load-products", async (req, res) => {
   const { category } = req.body;
-  console.log(category);
   let productsData = await loadAllProducts(category);
   res.status(201).send({
     products: productsData,
+  });
+});
+router.post("/load-products-length", async (req, res) => {
+  const { category } = req.body;
+  let productsDataLength = await loadAllProductsLength(category);
+  res.status(201).send({
+    productsLength: productsDataLength,
   });
 });
 

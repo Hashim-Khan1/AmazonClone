@@ -27,5 +27,17 @@ const loadAllProducts = async (whatToLoad) => {
     });
   return res;
 };
-
-module.exports = { createPost, loadAllProducts };
+const loadAllProductsLength = async (whatToLoad) => {
+  const res = await conn
+    .promise()
+    .query("SELECT * FROM products WHERE category = ?", [whatToLoad])
+    .then(([rows, fields]) => {
+      if (rows.length > 0) {
+        return rows.length;
+      } else {
+        return false;
+      }
+    });
+  return res;
+};
+module.exports = { createPost, loadAllProducts, loadAllProductsLength };

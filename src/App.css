@@ -489,6 +489,15 @@ footer,.upperFooter,.lowerFooter{
 a{
   text-decoration: none;
 }
+.pageNationRow{
+  width: max-content;
+  margin: 0 auto;
+  justify-content: center;
+}
+.pageNationRow div{
+  margin: 0 10px;
+  cursor: pointer;
+}
 @media only screen and (max-width:1278px){
   #backgroundImg{
     position: absolute;

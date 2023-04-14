@@ -88,7 +88,7 @@ function ProductPage() {
           <img src="src/assets/img/weights.png" className="productImg" />
           <div className="column" style={{ margin: "0 17px" }}>
             <p className="productTitleProductPage">{element.productTitle}</p>
-            <p className="productTitleProductPage">{element.price}</p>
+            <p className="productTitleProductPage">£ {element.price}</p>
             <p>
               Get it by {date + 1} {monthNames[today.getMonth()]}
             </p>

@@ -48,4 +48,22 @@ const loadAllProductsLength = async (whatToLoad) => {
     });
   return res;
 };
-module.exports = { createPost, loadAllProducts, loadAllProductsLength };
+const loadAllProductByID = async (whatToLoad) => {
+  const res = await conn
+    .promise()
+    .query("SELECT * FROM products WHERE productID = ?", [whatToLoad])
+    .then(([rows, fields]) => {
+      if (rows.length > 0) {
+        return rows;
+      } else {
+        return false;
+      }
+    });
+  return res;
+};
+module.exports = {
+  createPost,
+  loadAllProducts,
+  loadAllProductsLength,
+  loadAllProductByID,
+};

@@ -18,9 +18,9 @@ function ProductPage() {
       return lastIndex;
     }
   };
+
   const loadProductData = async () => {
     let result = correctSQL();
-    console.log(correctSQL());
     try {
       const res = await axios.post("http://localhost:3000/post/load-products", {
         category: result,

@@ -5,6 +5,7 @@ const {
   createPost,
   loadAllProducts,
   loadAllProductsLength,
+  loadAllProductByID,
 } = require("../functions/post");
 
 const router = express.Router();
@@ -35,6 +36,13 @@ router.post("/load-products-length", async (req, res) => {
   let productsDataLength = await loadAllProductsLength(category);
   res.status(201).send({
     productsLength: productsDataLength,
+  });
+});
+router.post("/load-products-productID", async (req, res) => {
+  const { productID } = req.body;
+  let productData = await loadAllProductByID(productID);
+  res.status(201).send({
+    productData: productData,
   });
 });
 

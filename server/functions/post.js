@@ -54,7 +54,7 @@ const loadAllProductByID = async (whatToLoad) => {
     .query("SELECT * FROM products WHERE productID = ?", [whatToLoad])
     .then(([rows, fields]) => {
       if (rows.length > 0) {
-        return rows;
+        return rows[0];
       } else {
         return false;
       }

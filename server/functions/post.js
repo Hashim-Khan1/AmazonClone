@@ -17,9 +17,7 @@ const createPost = async (
 const loadAllProducts = async (whatToLoad, limit) => {
   const rowsPerPage = 4;
   const startLimit = (limit - 1) * rowsPerPage;
-  const endLimit = rowsPerPage * limit;
-  console.log(startLimit, "start");
-  console.log(endLimit, "end");
+  const endLimit = rowsPerPage;
 
   const res = await conn
     .promise()

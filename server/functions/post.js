@@ -14,10 +14,20 @@ const createPost = async (
     [productID, productTitle, category, price, productDescription]
   );
 };
-const loadAllProducts = async (whatToLoad) => {
+const loadAllProducts = async (whatToLoad, limit) => {
+  const rowsPerPage = 4;
+  const startLimit = (limit - 1) * rowsPerPage;
+  const endLimit = rowsPerPage * limit;
+  console.log(startLimit, "start");
+  console.log(endLimit, "end");
+
   const res = await conn
     .promise()
-    .query("SELECT * FROM products WHERE category = ?", [whatToLoad])
+    .query("SELECT * FROM products WHERE category = ? LIMIT ?, ?", [
+      whatToLoad,
+      startLimit,
+      endLimit,
+    ])
     .then(([rows, fields]) => {
       if (rows.length > 0) {
         return rows;

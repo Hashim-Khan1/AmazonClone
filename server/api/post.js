@@ -24,8 +24,8 @@ router.post("/create-post", async (req, res) => {
   });
 });
 router.post("/load-products", async (req, res) => {
-  const { category } = req.body;
-  let productsData = await loadAllProducts(category);
+  const { category, limit } = req.body;
+  let productsData = await loadAllProducts(category, limit);
   res.status(201).send({
     products: productsData,
   });

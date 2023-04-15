@@ -3,7 +3,7 @@ import Response from "../components/Response";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-function SignIn() {
+function SignIn(props: any) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -32,7 +32,9 @@ function SignIn() {
       [name]: value,
     }));
   };
-
+  const changeForm = () => {
+    props.onChildData("Register");
+  };
   return (
     <>
       <div id="loginLogo"></div>
@@ -84,7 +86,9 @@ function SignIn() {
         </p>
         <div className="line"></div>
       </div>
-      <div className="greyGBtn">Create your not amazon account</div>
+      <div className="greyGBtn" onClick={changeForm}>
+        Create your not amazon account
+      </div>
     </>
   );
 }

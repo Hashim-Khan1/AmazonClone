@@ -2,7 +2,7 @@ import { useState } from "react";
 import Response from "../components/Response";
 import axios from "axios";
 
-function Register() {
+function Register(props: any) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -31,6 +31,9 @@ function Register() {
       ...values,
       [name]: value,
     }));
+  };
+  const changeForm = () => {
+    props.onChildData("Login");
   };
   return (
     <>
@@ -87,7 +90,9 @@ function Register() {
         </p>
         <div className="line"></div>
       </div>
-      <div className="greyGBtn">Create your not amazon account</div>
+      <div className="greyGBtn" onClick={changeForm}>
+        Have an account? Sign in
+      </div>
     </>
   );
 }

@@ -4,7 +4,7 @@ import axios from "axios";
 
 function Nav() {
   const [userInfo, setUserInfo] = useState("");
-  const [basketItems, setbasketItems] = useState();
+  const [basketItems, setbasketItems] = useState(0);
 
   const lowerNavArray = [
     "Best Sellers",

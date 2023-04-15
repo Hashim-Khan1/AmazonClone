@@ -23,7 +23,10 @@ function Product(props: any) {
   };
   const addToBasket = (e: any) => {
     let basketNumber = document.getElementById("basketItem");
-
+    const basketNumberNew = basketNumber?.innerText;
+    const newBasketNumber = +basketNumberNew + 1;
+    console.log(newBasketNumber);
+    basketNumber.innerText = newBasketNumber;
     const items = {
       quantity: quanityRef.current.value,
       productInfo: props,
@@ -37,9 +40,6 @@ function Product(props: any) {
       basketItems.push(items);
       const updatedItems = JSON.stringify(basketItems);
       localStorage.setItem("basketItems", updatedItems);
-      const basketNumberNew = basketNumber?.innerText;
-      const newBasketNumber = +basketNumberNew + 1;
-      basketNumber.innerText = newBasketNumber;
     }
   };
   return (

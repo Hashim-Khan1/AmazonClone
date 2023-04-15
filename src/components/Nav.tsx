@@ -109,6 +109,7 @@ function Nav() {
                 color: "#febd69",
                 fontWeight: "bold",
               }}
+              id="basketItem"
             >
               {basketItems}
             </p>

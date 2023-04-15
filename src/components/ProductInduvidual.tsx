@@ -1,7 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 
 function Product(props: any) {
-  const [productData, setProductData] = useState(props);
   const quanityRef = useRef(1);
   const renderDate = () => {
     const today = new Date();
@@ -23,13 +22,14 @@ function Product(props: any) {
     return [date + 1, " ", monthNames[today.getMonth()]];
   };
   const addToBasket = (e: any) => {
+    let basketNumber = document.getElementById("basketItem");
+
     const items = {
       quantity: quanityRef.current.value,
       productInfo: props,
     };
 
     if (localStorage.getItem("basketItems") == null) {
-      // console.log("no basket setting the basket");
       const itemsArray = [items];
       localStorage.setItem("basketItems", JSON.stringify(itemsArray));
     } else {
@@ -37,6 +37,9 @@ function Product(props: any) {
       basketItems.push(items);
       const updatedItems = JSON.stringify(basketItems);
       localStorage.setItem("basketItems", updatedItems);
+      const basketNumberNew = basketNumber?.innerText;
+      const newBasketNumber = +basketNumberNew + 1;
+      basketNumber.innerText = newBasketNumber;
     }
   };
   return (
@@ -75,7 +78,6 @@ function Product(props: any) {
           <select
             ref={quanityRef}
             name="quantityVal"
-            id=""
             style={{ marginLeft: "10px" }}
           >
             <option value="1">1</option>

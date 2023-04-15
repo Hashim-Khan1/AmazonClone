@@ -11,14 +11,12 @@ function Register(props: any) {
 
   const submitForm = async (e: any) => {
     e.preventDefault();
-    console.log(formData);
     try {
       const result = await axios.post(
         "http://localhost:3000/user/create-user",
         formData
       );
 
-      console.log(result.data);
       setResponse(result.data);
     } catch (error) {
       console.log(error);

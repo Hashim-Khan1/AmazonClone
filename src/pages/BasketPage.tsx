@@ -1,10 +1,45 @@
+import { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 
 import Footer from "../components/Footer";
 
 function BasketPage() {
+  const [basketItems, setBasketItems] = useState("");
+  const getBasketItems = () => {
+    console.log("sss");
+    if (localStorage.getItem("basketItems") != null) {
+      const basketItemsLocal = localStorage.getItem("basketItems");
+      setBasketItems(JSON.parse(basketItemsLocal));
+    }
+  };
+  const renderItems = (items: any) => {
+    return items.map((el: any) => {
+      return (
+        <div className="column" style={{ minWidth: "100%" }}>
+          <div className="productContainer row">
+            <div></div>
+            <img src="src/assets/img/weights.png" className="productImg" />
+            <div className="column" style={{ margin: "0 17px" }}>
+              <p className="productTitleProductPage">{}</p>
+              <p className="productTitleProductPage">£39.99</p>
+              <p> </p>
+              <p>Get it Wednesday, 5 Apr </p>
+              <p>FREE Delivery by Amazon </p>
+              <div className="row " style={{ margin: "10px 0" }}>
+                <p>Quantity: 1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    });
+  };
+  useEffect(() => {
+    getBasketItems();
+  }, []);
   return (
     <>
+      {console.log(basketItems)}
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -30,37 +65,13 @@ function BasketPage() {
             style={{ borderTop: "1px solid #e3e6e6", marginBottom: "20px" }}
           />
           <div className="row" id="basketRow">
-            <div className="column">
-              <div className="productContainer row">
-                <div></div>
-                <img src="src/assets/img/weights.png" className="productImg" />
-                <div className="column" style={{ margin: "0 17px" }}>
-                  <p className="productTitleProductPage">
-                    Sony PlayStation DualShock 4 Controller - Black
-                  </p>
-                  <p className="productTitleProductPage">£39.99</p>
-                  <p> </p>
-                  <p>Get it Wednesday, 5 Apr </p>
-                  <p>FREE Delivery by Amazon </p>
-                  <div className="row " style={{ margin: "10px 0" }}>
-                    <p>Quantity</p>
-                    <select name="" id="" style={{ marginLeft: "10px" }}>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+            <div className="column" style={{ width: "100%" }}>
+              {basketItems != ""
+                ? renderItems(basketItems)
+                : "No products in basket"}
             </div>
-            <div className="checkoutBox column">
+
+            <div className="checkoutBox column" style={{ minWidth: "300px" }}>
               <p className="productTitleProductPage">£72.55</p>
               <p>FREE delivery Monday, April 17. Details</p>
               <p>In stock</p>

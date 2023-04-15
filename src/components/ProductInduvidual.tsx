@@ -25,7 +25,6 @@ function Product(props: any) {
     let basketNumber = document.getElementById("basketItem");
     const basketNumberNew = basketNumber?.innerText;
     const newBasketNumber = +basketNumberNew + 1;
-    console.log(newBasketNumber);
     basketNumber.innerText = newBasketNumber;
     const items = {
       quantity: quanityRef.current.value,

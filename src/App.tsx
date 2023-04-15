@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
@@ -10,8 +9,6 @@ import ProductInduvidual from "./pages/ProductInduvidual";
 import BasketPage from "./pages/BasketPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <Routes>

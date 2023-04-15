@@ -17,16 +17,17 @@ function BasketPage() {
       return (
         <div className="column" style={{ minWidth: "100%" }}>
           <div className="productContainer row">
-            <div></div>
             <img src="src/assets/img/weights.png" className="productImg" />
             <div className="column" style={{ margin: "0 17px" }}>
-              <p className="productTitleProductPage">{}</p>
-              <p className="productTitleProductPage">£39.99</p>
+              <p className="productTitleProductPage">
+                {el.productInfo.productTitle}
+              </p>
+              <p className="productTitleProductPage">£{el.productInfo.price}</p>
               <p> </p>
               <p>Get it Wednesday, 5 Apr </p>
               <p>FREE Delivery by Amazon </p>
               <div className="row " style={{ margin: "10px 0" }}>
-                <p>Quantity: 1</p>
+                <p>Quantity: {el.quantity}</p>
               </div>
             </div>
           </div>

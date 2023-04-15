@@ -1,4 +1,8 @@
+import { useState, useEffect, useRef } from "react";
+
 function Product(props: any) {
+  const [productData, setProductData] = useState(props);
+  const quanityRef = useRef(1);
   const renderDate = () => {
     const today = new Date();
     const date = today.getDate();
@@ -17,6 +21,23 @@ function Product(props: any) {
       "December",
     ];
     return [date + 1, " ", monthNames[today.getMonth()]];
+  };
+  const addToBasket = (e: any) => {
+    const items = {
+      quantity: quanityRef.current.value,
+      productInfo: props,
+    };
+
+    if (localStorage.getItem("basketItems") == null) {
+      // console.log("no basket setting the basket");
+      const itemsArray = [items];
+      localStorage.setItem("basketItems", JSON.stringify(itemsArray));
+    } else {
+      let basketItems = JSON.parse(localStorage.getItem("basketItems"));
+      basketItems.push(items);
+      const updatedItems = JSON.stringify(basketItems);
+      localStorage.setItem("basketItems", updatedItems);
+    }
   };
   return (
     <div className="row" id="productRow">
@@ -51,7 +72,12 @@ function Product(props: any) {
         </p>
         <div className="row " style={{ margin: "10px 0" }}>
           <p>Quantity</p>
-          <select name="" id="" style={{ marginLeft: "10px" }}>
+          <select
+            ref={quanityRef}
+            name="quantityVal"
+            id=""
+            style={{ marginLeft: "10px" }}
+          >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -65,7 +91,9 @@ function Product(props: any) {
           </select>
         </div>
 
-        <div className="yellowBtn">Add to basekt</div>
+        <div onClick={addToBasket} className="yellowBtn">
+          Add to basekt
+        </div>
       </div>
     </div>
   );

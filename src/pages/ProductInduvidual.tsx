@@ -37,7 +37,6 @@ function ProductInduvidual() {
   }, []);
   return (
     <>
-      {console.log(ProductData)}
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -54,6 +53,7 @@ function ProductInduvidual() {
               category={ProductData?.category}
               productDescription={ProductData?.productDescription}
               price={ProductData?.price}
+              productID={ProductData?.productID}
             />
           ) : (
             "Cannot find Product"

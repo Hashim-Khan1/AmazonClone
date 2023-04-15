@@ -4,6 +4,8 @@ import axios from "axios";
 
 function Nav() {
   const [userInfo, setUserInfo] = useState("");
+  const [basketItems, setbasketItems] = useState();
+
   const lowerNavArray = [
     "Best Sellers",
     "Gift Ideas",
@@ -43,11 +45,19 @@ function Nav() {
       console.log(error);
     }
   };
+  const getBasketItems = () => {
+    if (localStorage.getItem("basketItems") !== null) {
+      let basketItems = JSON.parse(localStorage.getItem("basketItems"));
+      setbasketItems(basketItems.length);
+    }
+  };
+
   useEffect(() => {
     if (checkCookie() != false) {
       verifyCookie(checkCookie());
     }
-  }, [userInfo]);
+    getBasketItems();
+  }, [userInfo, basketItems]);
   return (
     <nav>
       <div className="row" id="upperNav">
@@ -100,7 +110,7 @@ function Nav() {
                 fontWeight: "bold",
               }}
             >
-              0
+              {basketItems}
             </p>
             <img src="../src/assets/img/basket.png" id="basket" />
           </div>

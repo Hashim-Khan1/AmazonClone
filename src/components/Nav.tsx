@@ -131,7 +131,7 @@ function Nav() {
           return (
             <>
               <p>
-                <a href={`products/${el}`} style={{ color: "white" }}>
+                <a href={`/products/${el}`} style={{ color: "white" }}>
                   {el}
                 </a>
               </p>

@@ -7,19 +7,16 @@ function Nav() {
   const [basketItems, setbasketItems] = useState(0);
 
   const lowerNavArray = [
-    "Best Sellers",
-    "Gift Ideas",
-    "New Releases",
-    "Customer Service",
-    "Prime Video",
-    "Today's Deals",
-    "Music",
-    "Prime",
+    "Sports",
+    "Fragrances",
+    "Mobile phones",
+    "Tablets",
+    "TV",
+    "Consoles",
+    "Food",
     "Books",
-    "Audible",
-    "PC & Video Games",
-    "Vouchers",
-    "Kindle Books",
+    "Audio devices",
+    "Video Games",
     "PC",
   ];
   const checkCookie = () => {
@@ -127,7 +124,11 @@ function Nav() {
         {lowerNavArray.map((el: any) => {
           return (
             <>
-              <p>{el}</p>
+              <p>
+                <a href={`products/${el}`} style={{ color: "white" }}>
+                  {el}
+                </a>
+              </p>
             </>
           );
         })}

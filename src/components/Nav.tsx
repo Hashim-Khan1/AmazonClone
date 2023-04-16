@@ -99,25 +99,31 @@ function Nav() {
           className="row upperNavContentBox"
           style={{ margin: "0 20px", alignItems: "center" }}
         >
-          <div className="column">
-            <p
-              style={{
-                marginLeft: "10px",
-                color: "#febd69",
-                fontWeight: "bold",
-              }}
-              id="basketItem"
-            >
-              {basketItems}
-            </p>
-            <img src="../src/assets/img/basket.png" id="basket" />
-          </div>
-          <p
-            className="whiteBold"
-            style={{ letterSpacing: "1px", paddingLeft: "3px" }}
+          <a
+            href="/basket"
+            className="row alignItemsCenter"
+            style={{ color: "white" }}
           >
-            Basket
-          </p>
+            <div className="column">
+              <p
+                style={{
+                  marginLeft: "10px",
+                  color: "#febd69",
+                  fontWeight: "bold",
+                }}
+                id="basketItem"
+              >
+                {basketItems}
+              </p>
+              <img src="../src/assets/img/basket.png" id="basket" />
+            </div>
+            <p
+              className="whiteBold"
+              style={{ letterSpacing: "1px", paddingLeft: "3px" }}
+            >
+              Basket
+            </p>
+          </a>
         </div>
       </div>
       <div className="row" id="lowerNav">

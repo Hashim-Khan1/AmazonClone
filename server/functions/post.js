@@ -61,9 +61,16 @@ const loadAllProductByID = async (whatToLoad) => {
     });
   return res;
 };
+const createOrder = async (productID, orderedBy) => {
+  conn.query("INSERT INTO orders (productID,orderdBy) VALUES(?,?)", [
+    productID,
+    orderedBy,
+  ]);
+};
 module.exports = {
   createPost,
   loadAllProducts,
   loadAllProductsLength,
   loadAllProductByID,
+  createOrder,
 };

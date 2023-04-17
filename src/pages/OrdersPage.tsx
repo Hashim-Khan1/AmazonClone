@@ -1,17 +1,49 @@
 import { useState, useEffect } from "react";
-import Nav from "../components/Nav";
+import axios from "axios";
+import Cookies from "js-cookie";
 
+import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 function BasketPage() {
   const [basketItems, setBasketItems] = useState("");
-  const getBasketItems = () => {
-    console.log("sss");
-    if (localStorage.getItem("basketItems") != null) {
-      const basketItemsLocal = localStorage.getItem("basketItems");
-      setBasketItems(JSON.parse(basketItemsLocal));
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+
+  const checkCookie = () => {
+    const cookieValue = Cookies.get("AccessToekn");
+
+    if (cookieValue == undefined) return false;
+    return cookieValue;
+  };
+  const getBasketItems = async (username: string) => {
+    try {
+      const result = await axios.post(
+        "http://localhost:3000/post/get-total-orders",
+        {
+          username: username,
+        }
+      );
+      setBasketItems(result.data.orderItems);
+    } catch (error) {
+      console.log(error);
     }
   };
+  const verifyCookie = async (tokenValue: any) => {
+    try {
+      const result = await axios.post(
+        "http://localhost:3000/user/verify-token",
+        {
+          token: tokenValue,
+        }
+      );
+      setisLoggedIn(result.data.tokenAuth);
+      const { id } = result.data.tokenAuth;
+      getBasketItems(id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const renderItems = (items: any) => {
     return items.map((el: any) => {
       return (
@@ -19,16 +51,12 @@ function BasketPage() {
           <div className="productContainer row">
             <img src="src/assets/img/weights.png" className="productImg" />
             <div className="column" style={{ margin: "0 17px" }}>
-              <p className="productTitleProductPage">
-                {el.productInfo.productTitle}
-              </p>
-              <p className="productTitleProductPage">£{el.productInfo.price}</p>
+              <p className="productTitleProductPage">{el.productTitle}</p>
+              <p className="productTitleProductPage">£{el.price}</p>
               <p> </p>
               <p>Get it Wednesday, 5 Apr </p>
               <p>FREE Delivery by Amazon </p>
-              <div className="row " style={{ margin: "10px 0" }}>
-                <p>Quantity: {el.quantity}</p>
-              </div>
+              <div className="row " style={{ margin: "10px 0" }}></div>
             </div>
           </div>
         </div>
@@ -36,11 +64,11 @@ function BasketPage() {
     });
   };
   useEffect(() => {
-    getBasketItems();
+    verifyCookie(checkCookie());
   }, []);
+
   return (
     <>
-      {console.log(basketItems)}
       <Nav></Nav>
       <div
         id="containerInduvidual"

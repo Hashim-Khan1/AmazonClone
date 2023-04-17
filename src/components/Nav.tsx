@@ -33,7 +33,6 @@ function Nav() {
           token: tokenValue,
         }
       );
-      console.log(result);
       if (result != false) {
         let { id } = result.data.tokenAuth;
         setUserInfo(id);

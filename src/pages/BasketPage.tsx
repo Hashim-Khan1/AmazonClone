@@ -71,7 +71,9 @@ function BasketPage() {
             ID: id,
           }
         );
-        console.log(res.data);
+        if (res.data.response == "Orders added") {
+          localStorage.clear();
+        }
       } catch (err) {
         console.log(err);
       }

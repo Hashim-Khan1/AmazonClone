@@ -1,3 +1,6 @@
+import axios from "axios";
+import Cookies from "js-cookie";
+
 import { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 
@@ -5,8 +8,29 @@ import Footer from "../components/Footer";
 
 function BasketPage() {
   const [basketItems, setBasketItems] = useState("");
+  const [isLoggedIn, setisLoggedIn] = useState("");
+
+  const checkCookie = () => {
+    const cookieValue = Cookies.get("AccessToekn");
+
+    if (cookieValue == undefined) return false;
+    return cookieValue;
+  };
+  const verifyCookie = async (tokenValue: any) => {
+    try {
+      const result = await axios.post(
+        "http://localhost:3000/user/verify-token",
+        {
+          token: tokenValue,
+        }
+      );
+      console.log(result.data.tokenAuth);
+      setisLoggedIn(result.data.tokenAuth);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const getBasketItems = () => {
-    console.log("sss");
     if (localStorage.getItem("basketItems") != null) {
       const basketItemsLocal = localStorage.getItem("basketItems");
       setBasketItems(JSON.parse(basketItemsLocal));
@@ -35,12 +59,30 @@ function BasketPage() {
       );
     });
   };
+  const orderItems = async () => {
+    const { id } = isLoggedIn;
+    if (id !== false && id !== undefined) {
+      let basketItems = localStorage.getItem("basketItems");
+      try {
+        let res = await axios.post(
+          "http://localhost:3000/post/order-products",
+          {
+            products: basketItems,
+            ID: id,
+          }
+        );
+        console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
   useEffect(() => {
     getBasketItems();
+    verifyCookie(checkCookie());
   }, []);
   return (
     <>
-      {console.log(basketItems)}
       <Nav></Nav>
       <div
         id="containerInduvidual"
@@ -80,8 +122,9 @@ function BasketPage() {
                 EU products may differ from UK products. Additional terms apply.
                 Learn More.
               </p>
-
-              <div className="yellowBtn">Add to basekt</div>
+              <div className="yellowBtn" onClick={orderItems}>
+                Order products
+              </div>
             </div>
           </div>
         </section>

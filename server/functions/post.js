@@ -61,6 +61,21 @@ const loadAllProductByID = async (whatToLoad) => {
     });
   return res;
 };
+
+const loadOrders = async (username) => {
+  const res = await conn
+    .promise()
+    .query("SELECT * FROM orders WHERE orderdBy = ?", [username])
+    .then(([rows, fields]) => {
+      if (rows.length > 0) {
+        return rows;
+      } else {
+        return false;
+      }
+    });
+  return res;
+};
+
 const createOrder = async (productID, orderedBy) => {
   conn.query("INSERT INTO orders (productID,orderdBy) VALUES(?,?)", [
     productID,
@@ -73,4 +88,5 @@ module.exports = {
   loadAllProductsLength,
   loadAllProductByID,
   createOrder,
+  loadOrders,
 };

@@ -6,6 +6,7 @@ const {
   loadAllProducts,
   loadAllProductsLength,
   loadAllProductByID,
+  createOrder,
 } = require("../functions/post");
 
 const router = express.Router();
@@ -43,6 +44,16 @@ router.post("/load-products-productID", async (req, res) => {
   let productData = await loadAllProductByID(productID);
   res.status(201).send({
     productData: productData,
+  });
+});
+router.post("/order-products", async (req, res) => {
+  const { products, ID } = req.body;
+  let orders = JSON.parse(products);
+  orders.map((obj) => {
+    createOrder(obj.productInfo.productID, ID);
+  });
+  res.status(201).send({
+    response: "Orders added",
   });
 });
 

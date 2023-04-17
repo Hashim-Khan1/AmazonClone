@@ -7,6 +7,7 @@ const {
   loadAllProductsLength,
   loadAllProductByID,
   createOrder,
+  loadOrders,
 } = require("../functions/post");
 
 const router = express.Router();
@@ -54,6 +55,17 @@ router.post("/order-products", async (req, res) => {
   });
   res.status(201).send({
     response: "Orders added",
+  });
+});
+router.post("/get-total-orders", async (req, res) => {
+  const { username } = req.body;
+  let emptyArray = [];
+  let products = await loadOrders(username);
+  for (const el of products) {
+    emptyArray.push(await loadAllProductByID(el.productID));
+  }
+  res.status(201).send({
+    orderItems: emptyArray,
   });
 });
 

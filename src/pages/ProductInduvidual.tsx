@@ -58,42 +58,6 @@ function ProductInduvidual() {
           ) : (
             "Cannot find Product"
           )}
-          <p className="contentCardTitle" style={{ marginTop: "20px" }}>
-            Browse other products on discount you may like
-          </p>
-          <div className="row" style={{ margin: "20px 0" }}>
-            <div className="imgAndText">
-              <div
-                className="circleImg"
-                style={{ backgroundColor: "#e3e6e6" }}
-              ></div>
-              <div
-                className="row alignItemsCenter"
-                style={{ margin: "10px 0" }}
-              >
-                <div className="discountLabel" style={{ fontSize: "12px" }}>
-                  50% Off
-                </div>
-                <p
-                  style={{
-                    color: "#cc0c39",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Deal
-                </p>
-              </div>
-              <p
-                style={{
-                  fontWeight: "bold",
-                  padding: "0px 0",
-                }}
-              >
-                {}obj.price
-              </p>
-              <p className="productTitleSmall">{}obj.title</p>
-            </div>
-          </div>
         </section>
       </div>
       <Footer></Footer>

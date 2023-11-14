@@ -1,6 +1,8 @@
 const express = require("express");
 const { v4: uuidv4 } = require("uuid");
 const bodyParser = require("body-parser");
+const path = require("path");
+const fs = require("node:fs");
 const {
   createPost,
   loadAllProducts,
@@ -68,6 +70,15 @@ router.post("/get-total-orders", async (req, res) => {
     res.status(201).send({
       orderItems: emptyArray,
     });
+  }
+});
+router.get("/product/:id", (req, res) => {
+  const { id } = req.params;
+
+  if (fs.existsSync(path.join(__dirname, `../Images/${id}.png`))) {
+    res.sendFile(path.join(__dirname, `../Images/${id}.png`));
+  } else {
+    res.sendFile(path.join(__dirname, `../Images/404.png`));
   }
 });
 

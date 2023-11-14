@@ -75,7 +75,11 @@ function Nav() {
           <input type="text" id="search" placeholder="Search Amazone Clone" />
           <div className="searchBtn"></div>
         </div>
-        <div className="row upperNavContentBox" style={{ margin: "0 25px" }}>
+        <a
+          className="row upperNavContentBox"
+          style={{ margin: "0 25px", color: "white" }}
+          href="/login"
+        >
           <img src="../src/assets/img/gbFlag.png" id="flag" />
           <div className="column">
             <p className="greyText">
@@ -85,7 +89,7 @@ function Nav() {
               Accounts & Lists
             </p>
           </div>
-        </div>
+        </a>
         <div className="row upperNavContentBox" style={{ margin: "0 5px" }}>
           <div className="column">
             <p className="greyText">Returns</p>

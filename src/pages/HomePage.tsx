@@ -5,7 +5,6 @@ import ThirdSection from "../layouts/ThirdSection";
 import Footer from "../components/Footer";
 import { useState } from "react";
 function HomePage() {
-  const [navItems, setNavItems] = useState();
   const lowerNavArray = [
     "Sports",
     "Fragrances",

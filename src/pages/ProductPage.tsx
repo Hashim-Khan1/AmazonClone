@@ -76,7 +76,7 @@ function ProductPage() {
       "November",
       "December",
     ];
-
+    console.log(correctSQL(), "ssss");
     return productData.map((element) => {
       return (
         <a
@@ -85,7 +85,11 @@ function ProductPage() {
           style={{ color: "black" }}
           key={`${element.productID}`}
         >
-          <img src="src/assets/img/weights.png" className="productImg" />
+          {}
+          <img
+            src={"http://localhost:3000/post/product/" + correctSQL()}
+            className="productImg"
+          />
           <div className="column" style={{ margin: "0 17px" }}>
             <p className="productTitleProductPage">{element.productTitle}</p>
             <p className="productTitleProductPage">£ {element.price}</p>

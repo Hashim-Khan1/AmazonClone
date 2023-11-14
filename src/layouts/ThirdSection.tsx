@@ -6,19 +6,19 @@ function ThirdSection() {
     {
       productID: 0,
       title: "Sports shoe",
-      img: "src/assets/img/weights.png",
+      img: "src/assets/img/nikeShoe.png",
       price: "£13.99",
     },
     {
       productID: 1,
       title: "Sports shoe",
-      img: "src/assets/img/weights.png",
+      img: "src/assets/img/nikeShoe.png",
       price: "£13.99",
     },
     {
       productID: 2,
       title: "DLSports shoe",
-      img: "src/assets/img/weights.png",
+      img: "src/assets/img/nikeShoe.png",
       price: "£13.99",
     },
     {
@@ -61,10 +61,11 @@ function ThirdSection() {
           href={`product/${obj.productID}`}
           style={{ textDecoration: "none", color: "black" }}
         >
-          <div
+          <img
+            src={obj.img}
             className="circleImg"
             style={{ backgroundColor: "#e3e6e6" }}
-          ></div>
+          ></img>
           <div className="row alignItemsCenter" style={{ margin: "10px 0" }}>
             <div className="discountLabel" style={{ fontSize: "12px" }}>
               50% Off

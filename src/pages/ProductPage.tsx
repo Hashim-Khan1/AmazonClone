@@ -22,10 +22,9 @@ function ProductPage() {
   const loadProductData = async () => {
     let result = correctSQL();
     try {
-      const res = await axios.post("http://localhost:3000/post/load-products", {
-        category: result,
-        limit: pageOffset,
-      });
+      const res = await axios.get(
+        `http://localhost:3000/post/load-products/${result}/${pageOffset}`
+      );
       setProductData(res.data.products);
     } catch (error) {
       console.log(error);
@@ -36,11 +35,8 @@ function ProductPage() {
     let result = correctSQL();
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/post/load-products-length",
-        {
-          category: result,
-        }
+      const res = await axios.get(
+        "http://localhost:3000/post/load-category-length/" + result
       );
       setpageLength(res.data.productsLength);
     } catch (error) {

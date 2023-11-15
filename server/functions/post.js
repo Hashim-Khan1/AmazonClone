@@ -35,13 +35,13 @@ const loadAllProducts = async (whatToLoad, limit) => {
     });
   return res;
 };
-const loadAllProductsLength = async (whatToLoad) => {
+const productsByCategory = async (whatToLoad) => {
   const res = await conn
     .promise()
     .query("SELECT * FROM products WHERE category = ?", [whatToLoad])
     .then(([rows, fields]) => {
       if (rows.length > 0) {
-        return rows.length;
+        return rows;
       } else {
         return false;
       }
@@ -85,7 +85,7 @@ const createOrder = async (productID, orderedBy) => {
 module.exports = {
   createPost,
   loadAllProducts,
-  loadAllProductsLength,
+  productsByCategory,
   loadAllProductByID,
   createOrder,
   loadOrders,

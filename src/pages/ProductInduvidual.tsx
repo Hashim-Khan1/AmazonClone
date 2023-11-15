@@ -20,12 +20,7 @@ function ProductInduvidual() {
   const loadProductData = async () => {
     let result = correctSQL();
     try {
-      const res = await axios.post(
-        "http://localhost:3000/post/load-products-productID",
-        {
-          productID: result,
-        }
-      );
+      const res = await axios.get("http://localhost:3000/post/" + result);
       setProductData(res.data.productData);
     } catch (error) {
       console.log(error);
